@@ -1,0 +1,69 @@
+<div class="fb-frame">
+  <div class="fb-item">
+    <div class="fb-item__group">
+      <div class="fb-item__group__header">
+        <span class="fb-item__group__header__title">Контейнеры</span>
+      </div>
+      <div class="fb-item__group__body">
+        <div class="fb-item__draggable" pDraggable="container" (onDragStart)="dragStart($event)">
+          <div class="fb-item__draggable__header">
+            <div class="fb-item__draggable__header__icon"></div>
+            <span class="fb-item__draggable__header__name">Горизонтальный</span>
+          </div>
+          <div class="fb-item__draggable__body">
+            <div class="fb-body__container__horizontal" pDroppable="container"></div>
+          </div>
+        </div>
+        <div class="fb-item__draggable" pDraggable="container">
+          <div class="fb-item__draggable__header">
+            <div class="fb-item__draggable__header__icon"></div>
+            <span class="fb-item__draggable__header__name">Вертикальный</span>
+          </div>
+          <div class="fb-item__draggable__body">
+            <div class="fb-body__container__vertical" pDroppable="container"></div>
+          </div>
+        </div>
+        <div class="fb-item__draggable" pDraggable="container">
+          <div class="fb-item__draggable__header">
+            <div class="fb-item__draggable__header__icon"></div>
+            <span class="fb-item__draggable__header__name">Пробел</span>
+          </div>
+          <div class="fb-item__draggable__body">
+            <div class="fb-body__container__spaces"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fb-item__group">
+      <div class="fb-item__group__header">
+        <span class="fb-item__group__header__title">Поля</span>
+      </div>
+      <div class="fb-item__group__body">
+        <div class="fb-item__draggable" pDraggable="container">
+          <div class="fb-item__draggable__header">
+            <div class="fb-item__draggable__header__icon"></div>
+            <span class="fb-item__draggable__header__name">Текст</span>
+          </div>
+          <div class="fb-item__draggable__body">
+            <input type="text">
+          </div>
+        </div>
+        <div class="fb-item__draggable" pDraggable="container">
+          <div class="fb-item__draggable__header">
+            <div class="fb-item__draggable__header__icon"></div>
+            <span class="fb-item__draggable__header__name">Кнопка</span>
+          </div>
+          <div class="fb-item__draggable__body">
+            <button></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fb-body">
+    <div class="fb-body__container" pDroppable="container"></div>
+  </div>
+  <div class="fb-setting">
+
+  </div>
+</div>
