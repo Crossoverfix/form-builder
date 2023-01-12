@@ -1,0 +1,16 @@
+:host{
+  width: 100%;
+}
+.fb{
+  &-frame{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+}

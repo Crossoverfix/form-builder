@@ -1,0 +1,16 @@
+<div class="fb-item">
+  <div class="fb-item__group" *ngFor="let item of items">
+    <div class="fb-item__group__header">
+      <span class="fb-item__group__header__title">{{ item.group}}</span>
+    </div>
+    <div class="fb-item__group__body">
+      <!--<div class="fb-item__draggable" pDraggable="container" (onDragStart)="dragStart($event)">-->
+      <div class="fb-item__draggable" *ngFor="let currItem of item.groupItem" pDraggable="container" (onDragStart)="dragStart(currItem)">
+        <div class="fb-item__draggable__header">
+          <div class="fb-item__draggable__header__icon pi" [ngClass]="currItem.icon"></div>
+          <span class="fb-item__draggable__header__name">{{currItem.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

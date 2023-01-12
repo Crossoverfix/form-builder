@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DragDropModule } from 'primeng/dragdrop';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +13,5 @@ export class AppComponent {
 
   ngOnInit() {
   }
-  dragStart(item: any) {
-    this.draggedItem = item;
-    debugger;
-  }
+
 }
