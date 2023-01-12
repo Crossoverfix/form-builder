@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 
 @Component({
@@ -8,7 +8,8 @@ import { PrimeIcons } from 'primeng/api';
 })
 export class FbItemsComponent implements OnInit{
 
-  public draggedItem = [];
+  @Output() itemDragged: EventEmitter<any> = new EventEmitter<any>();
+  @Output() endOfDrag: EventEmitter<any> = new EventEmitter<any>();
   @Input() items: any;
 
   ngOnInit(){
@@ -16,7 +17,9 @@ export class FbItemsComponent implements OnInit{
   }
 
   dragStart(item: any) {
-    this.draggedItem = item;
-    console.log(this.draggedItem);
+    this.itemDragged.emit(item);
+  }
+  dragEnd(){
+    this.endOfDrag.emit(true);
   }
 }

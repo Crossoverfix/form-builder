@@ -1,5 +1,5 @@
 <div class="fb-frame">
-  <app-fb-items [items]="items"></app-fb-items>
-  <app-fb-constructor [items]="items"></app-fb-constructor>
+  <app-fb-items [items]="items" (itemDragged)="currItem($event)" (endOfDrag)="endDrag()"></app-fb-items>
+  <app-fb-constructor [items]="items" [draggedList]="draggedItem" (dropEvent)="currArea($event)"></app-fb-constructor>
   <app-fb-settings></app-fb-settings>
 </div>

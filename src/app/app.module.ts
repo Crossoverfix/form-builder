@@ -7,6 +7,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { FbItemsComponent } from './form-builder/fb-items/fb-items.component';
 import { FbConstructorComponent } from './form-builder/fb-constructor/fb-constructor.component';
 import { FbSettingsComponent } from './form-builder/fb-settings/fb-settings.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FbSettingsComponent } from './form-builder/fb-settings/fb-settings.comp
   ],
   imports: [
     BrowserModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

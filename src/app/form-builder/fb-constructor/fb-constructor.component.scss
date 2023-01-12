@@ -27,6 +27,30 @@
         //border: 1px solid #5be79c;
         outline: 3px solid #5be79c;
       }
+      .target{
+        position: absolute;
+        display: block;
+        border-radius: 3px;
+        border: 1px solid #727272;
+        width: 100px;
+        height: 100px;
+        &-1{
+          left: 10px;
+          top: 10px;
+        }
+        &-2{
+          left: 120px;
+          top: 120px;
+        }
+        &-3{
+          left: 240px;
+          top: 10px;
+        }
+        &-4{
+          left: 400px;
+          top: 150px;
+        }
+      }
     }
   }
 }
