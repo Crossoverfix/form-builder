@@ -26,6 +26,7 @@
       &.p-draggable-enter{
         //border: 1px solid #5be79c;
         outline: 3px solid #5be79c;
+        border-bottom-width: 2px;
       }
       .target{
         position: absolute;

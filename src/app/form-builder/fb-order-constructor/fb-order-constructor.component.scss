@@ -1,0 +1,69 @@
+:host{
+  width: 50%;
+}
+.fb{
+  &-order{
+    &-constructor{
+      width: 100%;
+      min-height: 100%;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      padding: 20px 15px;
+      background-color: #ffffff;
+      &__content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      ::ng-deep{
+        .p-orderlist-list-container{
+          .cdk-drop-list.p-orderlist-list{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            li{
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    &__object{
+      width: 100%;
+      height: 30px;
+      border: 1px solid #18bb7c;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      padding: 0 15px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      &__icon{
+        display: block;
+        width: 40px;
+        height: 20px;
+        background-color: rgba(128, 128, 128, 0.21);
+        border: 1px dashed rgba(128, 128, 128, 1);
+        margin-right: 10px;
+        position: relative;
+        font-size: 12px;
+        &:before{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &__title{
+        font-size: 14px;
+      }
+    }
+  }
+}
+

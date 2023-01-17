@@ -9,8 +9,18 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     box-sizing: border-box;
     padding: 30px;
+    &__wrapp{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      padding-top: 20px;
+    }
   }
 }
