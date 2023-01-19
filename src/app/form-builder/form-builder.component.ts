@@ -1,4 +1,4 @@
-import {Component, ContentChild, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ContentChild, ElementRef, OnInit, ViewChild, Input} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
@@ -8,7 +8,6 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class FormBuilderComponent implements OnInit{
 
-  @ContentChild('parrent') parrentContainer: ElementRef | undefined;
 
   public items = [
     {group: "Контейнеры", groupItem: [
@@ -21,17 +20,23 @@ export class FormBuilderComponent implements OnInit{
         {name: "Кнопка", icon: "", template: "button", container: false,}
       ]}
   ];
-  public baseConstructorArr = [];
+  public baseConstructorArr: any | never = [];
 
   constructor(){
-    setTimeout(() => {
-      console.log(this.parrentContainer);
-    }, 1000);
+
   }
 
   ngOnInit(){
 
   }
 
-
+  draggedItem(object: any){
+    if(object.target.id == 'parrent'){
+      this.addOnBaseArr(object.item);
+    }
+  }
+  addOnBaseArr(item: any | never){
+    this.baseConstructorArr.push(item);
+    console.log(this.baseConstructorArr);
+  }
 }

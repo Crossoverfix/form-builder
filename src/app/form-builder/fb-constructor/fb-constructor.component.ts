@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CdkDragDrop, moveItemInArray,} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-fb-constructor',
@@ -16,9 +17,11 @@ export class FbConstructorComponent implements OnInit{
   }
 
   ngOnInit(){
-
+    // this.baseConstructorArr = this.items;
   }
 
-
+  drop(event: CdkDragDrop<string[]>){
+    moveItemInArray(this.baseConstructorArr, event.previousIndex, event.currentIndex);
+  }
 
 }
