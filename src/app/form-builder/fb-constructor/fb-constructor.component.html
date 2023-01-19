@@ -1,9 +1,7 @@
 <div class="fb-constructor">
-  <div #parrent id="parrent" class="fb-constructor__container" pDroppable="container" (onDrop)="drop($event)">
-    <div class="draged-item" *ngFor="let item of itemsList">{{item.name}}</div>
-    <div class="target target-1"></div>
-    <div class="target target-2"></div>
-    <div class="target target-3"></div>
-    <div class="target target-4"></div>
+  <div #parrent id="parrent" class="fb-constructor__container"
+       cdkDropList
+  >
+    <div class="draged-item" *ngFor="let item of baseConstructorArr" cdkDrag>{{item.name}}</div>
   </div>
 </div>

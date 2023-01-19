@@ -1,15 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-
-export interface IGroupItem {
-  name: string
-  icon: string
-  template: string
-  container: boolean
-}
-export interface IConstructorItems {
-  group: string
-  groupItem: IGroupItem
-}
+import {Component, ContentChild, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-form-builder',
@@ -18,7 +8,8 @@ export interface IConstructorItems {
 })
 export class FormBuilderComponent implements OnInit{
 
-  public draggedItem: {} | null = null;
+  @ContentChild('parrent') parrentContainer: ElementRef | undefined;
+
   public items = [
     {group: "Контейнеры", groupItem: [
         {name: "Горизонтальный", icon: "pi-arrows-h", template: "horizontal", container: true,},
@@ -30,22 +21,17 @@ export class FormBuilderComponent implements OnInit{
         {name: "Кнопка", icon: "", template: "button", container: false,}
       ]}
   ];
+  public baseConstructorArr = [];
+
+  constructor(){
+    setTimeout(() => {
+      console.log(this.parrentContainer);
+    }, 1000);
+  }
+
   ngOnInit(){
 
   }
-  currItem(currItem: any){
-    this.draggedItem = currItem;
-    console.log(this.draggedItem);
-  }
-  currArea(currArea: any){
-    if (this.draggedItem){
 
-    }
-    console.log(currArea);
-  }
-  endDrag(){
-    this.draggedItem = null;
-    console.log("end drag on parrent" + this.draggedItem);
-  }
 
 }
