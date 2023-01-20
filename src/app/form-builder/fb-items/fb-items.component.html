@@ -1,11 +1,11 @@
 <div class="fb-item">
-  <div class="fb-item__group" *ngFor="let item of items; index as i" cdkDropListGroup>
+  <div class="fb-item__group" *ngFor="let item of items; index as i">
     <div class="fb-item__group__header">
       <span class="fb-item__group__header__title">{{ item.group}}</span>
     </div>
     <div class="fb-item__group__body"
          cdkDropList
-         [cdkDropListData]="items"
+         [cdkDropListData]="item.groupItem"
          cdkDropListSortingDisabled
          (cdkDropListDropped)="drop($event, i)">
       <div class="fb-item__draggable" *ngFor="let currItem of item.groupItem" cdkDrag>

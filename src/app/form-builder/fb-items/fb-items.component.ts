@@ -10,7 +10,6 @@ import { PrimeIcons } from 'primeng/api';
 export class FbItemsComponent implements OnInit{
 
   @Output() itemDragged: EventEmitter<any> = new EventEmitter<any>();
-  @Output() itemDraggedTarget: EventTarget | null = null;
   @Input() items: any;
 
   constructor(){
@@ -20,7 +19,8 @@ export class FbItemsComponent implements OnInit{
 
   }
   drop(event: CdkDragDrop<string[]>, i: any){
-    let item = {item: this.items[i].groupItem[event.currentIndex],target: event.event.target};
+    let item = {item: this.items[i].groupItem[event.currentIndex],target: event.event.target, event: event};
     this.itemDragged.emit(item);
+    console.log('dd');
   }
 }

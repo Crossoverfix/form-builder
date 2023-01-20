@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CdkDragDrop} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-container',
@@ -15,5 +16,8 @@ export class ContainerComponent implements OnInit{
 
   ngOnInit(){
 
+  }
+  drop(event: CdkDragDrop<string[]>){
+    console.log('test');
   }
 }

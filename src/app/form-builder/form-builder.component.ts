@@ -1,5 +1,6 @@
 import {Component, ContentChild, ElementRef, OnInit, ViewChild, Input} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {Observable, Subject} from "rxjs";
 
 @Component({
   selector: 'app-form-builder',
@@ -21,6 +22,7 @@ export class FormBuilderComponent implements OnInit{
       ]}
   ];
   public baseConstructorArr: any | never = [];
+  public draggEvent = new Subject();
 
   constructor(){
 
@@ -31,9 +33,11 @@ export class FormBuilderComponent implements OnInit{
   }
 
   draggedItem(object: any){
-    if(object.target.id == 'parrent'){
-      this.addOnBaseArr(object.item);
-    }
+    // if(object.target.id == 'parrent'){
+    //   this.addOnBaseArr(object.item);
+    // }
+    console.log('dragged');
+    this.draggEvent.next(object);
   }
   addOnBaseArr(item: any | never){
     this.baseConstructorArr.push(item);
