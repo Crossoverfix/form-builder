@@ -21,8 +21,6 @@ export class FormBuilderComponent implements OnInit{
         {name: "Кнопка", icon: "", template: "button", container: false,}
       ]}
   ];
-  public baseConstructorArr: any | never = [];
-  public draggEvent = new Subject();
 
   constructor(){
 
@@ -32,7 +30,4 @@ export class FormBuilderComponent implements OnInit{
 
   }
 
-  draggedItem(object: any){
-    this.draggEvent.next(object);
-  }
 }

@@ -9,6 +9,7 @@ import {CdkDragDrop} from "@angular/cdk/drag-drop";
 export class ContainerComponent implements OnInit{
 
   @Input() container: any;
+  public currArr: any = [];
 
   constructor(){
 
