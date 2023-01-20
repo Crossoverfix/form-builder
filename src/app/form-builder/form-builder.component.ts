@@ -33,14 +33,6 @@ export class FormBuilderComponent implements OnInit{
   }
 
   draggedItem(object: any){
-    // if(object.target.id == 'parrent'){
-    //   this.addOnBaseArr(object.item);
-    // }
-    console.log('dragged');
     this.draggEvent.next(object);
-  }
-  addOnBaseArr(item: any | never){
-    this.baseConstructorArr.push(item);
-    console.log(this.baseConstructorArr);
   }
 }

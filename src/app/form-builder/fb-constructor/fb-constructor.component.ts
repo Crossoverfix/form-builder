@@ -21,8 +21,6 @@ export class FbConstructorComponent implements OnInit{
     this.formBuilderComponent = formBuilderComponent;
   }
   ngOnInit(){
-    // console.log(this.container);
-    // this.baseConstructorArr = this.items;
     this.formBuilderComponent.draggEvent.subscribe((obj) => {
       this.listenDraggEvent(obj);
     })
@@ -30,20 +28,14 @@ export class FbConstructorComponent implements OnInit{
 
   listenDraggEvent(obj: any){
     if(obj.target.id == this.container.nativeElement.id){
-      console.log(obj);
-      // this.baseConstructorArr.push(obj.item);
+      console.log(obj.event);
       copyArrayItem(
         obj.event.previousContainer.data,
         this.baseConstructorArr,
         obj.event.previousIndex,
         obj.event.currentIndex,
       );
-      // console.log(this.itemsList);
-      // console.log(this.baseConstructorArr);
-    } else {
-      // console.log('outside');
     }
-    // console.log(obj);
   }
   drop(event: CdkDragDrop<string[]>){
     moveItemInArray(this.baseConstructorArr, event.previousIndex, event.currentIndex);
