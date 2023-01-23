@@ -1,4 +1,10 @@
 :host{
   width: 100%;
+  z-index: 0;
+  margin: 10px 0;
+}
+.inerrContainer{
+  position: relative;
+  z-index: 1;
 }
 

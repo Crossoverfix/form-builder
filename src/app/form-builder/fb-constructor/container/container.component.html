@@ -1,6 +1,7 @@
-<div class="test" (cdkDropListDropped)="drop($event)"
-     (cdkDropListDropped)="drop($event)"
+<div class="inerrContainer" (cdkDropListDropped)="drop($event)"
      [cdkDropListData]="currArr"
+     #inerrContainer="cdkDropList"
+     [cdkDropListOrientation]="orentation"
      cdkDropList>
   <span>{{ container.name }}</span>
   <ng-container *ngFor="let item of currArr" [ngSwitch]="item.template">

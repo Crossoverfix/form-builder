@@ -1,13 +1,14 @@
-<!--<div class="fb-constructor" cdkDropListGroup>-->
-<div class="fb-constructor">
+<div class="fb-constructor" cdkDropListGroup>
+<!--<div class="fb-constructor">-->
   <div #parrent class="fb-constructor__container"
        (cdkDropListDropped)="drop($event)"
        [cdkDropListData]="baseConstructorArr"
+       [cdkDropListEnterPredicate]="blockSdkDragg"
        cdkDropList
   >
     <ng-container *ngFor="let item of baseConstructorArr" [ngSwitch]="item.template">
-      <app-container *ngSwitchCase="'vertical'" class="dragged-item vertical" [container]="item" cdkDrag></app-container>
-      <app-container *ngSwitchCase="'horizontal'" class="dragged-item horizontal" [container]="item" cdkDrag></app-container>
+      <app-container *ngSwitchCase="'vertical'" class="dragged-item vertical" [orentation]="item.template" [container]="item" cdkDrag></app-container>
+      <app-container *ngSwitchCase="'horizontal'" class="dragged-item horizontal" [orentation]="item.template" [container]="item" cdkDrag></app-container>
       <app-object *ngSwitchCase="'spaces'" class="dragged-item spaces" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'text'" class="dragged-item text" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'button'" class="dragged-item button" [object]="item" cdkDrag></app-object>

@@ -27,7 +27,9 @@ export class FbItemsComponent implements OnInit{
   }
   ngOnInit(){
   }
-  drop(event: CdkDragDrop<string[]>, i: any){
+  drop(event: CdkDragDrop<string[]>){
+    // console.log(event);
+    this.itemDragged.emit(event);
     // let item = {item: this.items[i].groupItem[event.currentIndex],target: event.event.target, event: event};
     // this.itemDragged.emit(item);
   }

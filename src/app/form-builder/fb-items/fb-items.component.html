@@ -7,6 +7,7 @@
          cdkDropList
          cdkDropListSortingDisabled
          [cdkDropListData]="item.groupItem"
+         (cdkDropListDropped)="drop($event)"
     >
       <div class="fb-item__draggable" *ngFor="let currItem of item.groupItem" cdkDrag>
         <div class="fb-item__draggable__header">

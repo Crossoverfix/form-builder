@@ -13,12 +13,15 @@ export class FbConstructorComponent implements OnInit{
   @ViewChild('parrent', {static: true}) container!: ElementRef;
   @Input() items: any;
   public baseConstructorArr: any = [];
+  private formBuilderComponent: FormBuilderComponent;
 
-  constructor(){
-
+  constructor(formBuilderComponent: FormBuilderComponent,){
+    this.formBuilderComponent = formBuilderComponent;
   }
   ngOnInit(){
-
+    this.formBuilderComponent.draggEvent.subscribe((obj) => {
+      this.listenDraggEvent(obj);
+    })
   }
 
   drop(event: CdkDragDrop<string[]>){
@@ -27,12 +30,21 @@ export class FbConstructorComponent implements OnInit{
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       // this.baseConstructorArr.push(event.previousContainer.data[event.previousIndex]);
-      copyArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
+      // copyArrayItem(
+      //   event.previousContainer.data,
+      //   event.container.data,
+      //   event.previousIndex,
+      //   event.currentIndex,
+      // );
+    }
+  }
+  blockSdkDragg(item: CdkDrag<number>) {;
+    return false;
+  }
+  listenDraggEvent(obj: any){
+    if(obj.event.target.id == this.container.nativeElement.id){
+      this.baseConstructorArr.push(obj.previousContainer.data[obj.previousIndex]);
+    } else {
     }
   }
 }

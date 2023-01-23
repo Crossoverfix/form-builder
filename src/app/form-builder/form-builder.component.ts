@@ -21,6 +21,7 @@ export class FormBuilderComponent implements OnInit{
         {name: "Кнопка", icon: "", template: "button", container: false,}
       ]}
   ];
+  public draggEvent = new Subject();
 
   constructor(){
 
@@ -28,6 +29,9 @@ export class FormBuilderComponent implements OnInit{
 
   ngOnInit(){
 
+  }
+  draggedEvent(event: any){
+    this.draggEvent.next(event);
   }
 
 }

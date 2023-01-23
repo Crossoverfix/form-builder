@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {CdkDragDrop} from "@angular/cdk/drag-drop";
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {CdkDragDrop, CdkDropList, moveItemInArray} from "@angular/cdk/drag-drop";
+import {FormBuilderComponent} from "../../form-builder.component";
 
 @Component({
   selector: 'app-container',
@@ -8,17 +9,31 @@ import {CdkDragDrop} from "@angular/cdk/drag-drop";
 })
 export class ContainerComponent implements OnInit{
 
+  @ViewChild('inerrContainer', {static: true}) innerContainer!: CdkDropList;
   @Input() container: any;
   public currArr: any = [];
+  @Input() orentation: any;
+  private formBuilderComponent: FormBuilderComponent;
 
-  constructor(){
-
+  constructor(formBuilderComponent: FormBuilderComponent,){
+    this.formBuilderComponent = formBuilderComponent;
   }
-
   ngOnInit(){
-
+    this.formBuilderComponent.draggEvent.subscribe((obj) => {
+      this.listenDraggEvent(obj);
+    })
   }
+
   drop(event: CdkDragDrop<string[]>){
-    console.log('test');
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    }
+  }
+  listenDraggEvent(obj: any){
+    if(obj.event.target.id == this.innerContainer.id){
+      this.currArr.push(obj.previousContainer.data[obj.previousIndex]);
+    } else {
+      console.log('no');
+    }
   }
 }
