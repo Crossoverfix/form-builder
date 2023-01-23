@@ -34,30 +34,15 @@
         display: block;
         &.vertical{
           margin: 10px 0;
-          ::ng-deep .inerrContainer{
-            padding: 25px 5px;
-            border-radius: 3px;
-            border: 1px solid #727272;
-            min-height: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-wrap: nowrap;
-          }
+          padding: 5px;
+          border-radius: 3px;
+          border: 1px solid #727272;
         }
         &.horizontal{
           margin: 10px 0;
-          ::ng-deep .inerrContainer{
-            padding: 5px;
-            border-radius: 3px;
-            border: 1px solid #727272;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-wrap: nowrap;
-          }
+          padding: 5px;
+          border-radius: 3px;
+          border: 1px solid #727272;
         }
         &.spaces{
           margin: 10px 0;

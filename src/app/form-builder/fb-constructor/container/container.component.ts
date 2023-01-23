@@ -22,6 +22,7 @@ export class ContainerComponent implements OnInit{
     this.formBuilderComponent.draggEvent.subscribe((obj) => {
       this.listenDraggEvent(obj);
     })
+    console.log("this container is", this.orentation);
   }
 
   drop(event: CdkDragDrop<string[]>){
