@@ -1,14 +1,18 @@
 :host{
-  width: 25%;
+  min-width: 250px;
+  width: 385px;
+  margin-right: 2px;
+  flex-shrink: 0;
 }
 .fb{
   &-item{
     width: 100%;
-    min-height: 100%;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    padding: 20px 15px;
+    height: 100%;
+    //border: 1px solid #000000;
+    padding: 35px 30px;
     background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     &__group{
       margin-bottom: 20px;
       width: 100%;
@@ -18,27 +22,40 @@
       box-sizing: border-box;
       &__header{
         position: relative;
-        padding: 0 50px;
-        margin: 0 0 15px 0;
-        &:before{
-          content: "";
-          position: absolute;
-          height: 1px;
-          width: 100%;
-          background-color: black;
-          left: 0;
-          top: 50%;
+        margin-bottom: 10px;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        &__toggle{
+          width: 24px;
+          height: 24px;
+          margin-right: 10px;
+          cursor: pointer;
+          background-image: url("../../../assets/icon/drop-down.svg");
+          background-size: 13px auto;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          &:hover{
+            opacity: 0.6;
+          }
         }
         &__title{
-          background-color: #ffffff;
-          padding: 0 5px;
-          font-size: 16px;
+          font-style: normal;
           font-weight: 500;
-          position: relative;
+          font-size: 20px;
+          line-height: 23px;
+          display: flex;
+          align-items: center;
+          color: #0049C2;
         }
       }
       &__body{
-
+        overflow: hidden;
       }
     }
     &__draggable{
@@ -49,22 +66,20 @@
       z-index: 1;
       &__header{
         width: 100%;
-        height: 30px;
-        border: 1px solid #18bb7c;
-        border-radius: 3px;
+        height: 40px;
+        border: 1px solid #C7CED5;
+        border-radius: 5px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: nowrap;
-        padding: 0 15px;
+        padding: 0 20px;
         box-sizing: border-box;
         &__icon{
           display: block;
-          width: 40px;
+          width: 25px;
           height: 20px;
-          background-color: rgba(128, 128, 128, 0.21);
-          border: 1px dashed rgba(128, 128, 128, 1);
           margin-right: 10px;
           position: relative;
           font-size: 12px;
@@ -76,7 +91,11 @@
           }
         }
         &__name{
+          font-style: normal;
+          font-weight: 700;
           font-size: 14px;
+          line-height: 16px;
+          color: #5A758D;
         }
       }
     }

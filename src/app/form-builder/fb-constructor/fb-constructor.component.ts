@@ -42,6 +42,7 @@ export class FbConstructorComponent implements OnInit{
     return false;
   }
   listenDraggEvent(obj: any){
+    console.log(obj);
     if(obj.event.target.id == this.container.nativeElement.id){
       this.baseConstructorArr.push(obj.previousContainer.data[obj.previousIndex]);
     } else {

@@ -1,6 +1,7 @@
 :host{
-  width: calc(50% - 40px);
-  margin: 0 20px;
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
 }
 .fb{
   &-constructor{
@@ -8,66 +9,69 @@
     min-height: 100%;
     height: 100%;
     position: relative;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    padding: 5px;
+    padding: 30px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    &__title{
+      margin: 0 0 20px 0;
+      //font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 35px;
+      color: #3E445A;
+    }
+    &__footer{
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      &__btn{
+        background: #FFFFFF;
+        border: 2px solid #0049C2;
+        border-radius: 5px;
+        box-shadow: none;
+        outline: none;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 5px;
+        padding: 0 25px;
+        i{}
+        span{
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+          color: #0049C2;
+        }
+      }
+    }
     &__container{
       position: relative;
       width: 100%;
-      height: 100%;
-      padding: 5px 5px 25px 5px;
+      min-height: 300px;
+      flex-grow: 1;
+      padding: 20px;
       margin: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      border-radius: 3px;
-      border: 1px solid #727272;
+      border: 1px solid #C7CED5;
+      border-radius: 5px;
+      background-color: #ffffff;
       justify-content: flex-start;
-      & > .dragged-item{
-        width: 100%;
-      }
-      ::ng-deep .dragged-item{
-        box-sizing: border-box;
-        min-height: 30px;
-        min-width: 100px;
-        position: relative;
-        display: block;
-        &.vertical{
-          margin: 10px 0;
-          padding: 5px;
-          border-radius: 3px;
-          border: 1px solid #727272;
-        }
-        &.horizontal{
-          margin: 10px 0;
-          padding: 5px;
-          border-radius: 3px;
-          border: 1px solid #727272;
-        }
-        &.spaces{
-          margin: 10px 0;
-          .inerrItem{
-            background-color: #f0f0f0;
-            border: 1px dashed #727272;
-            padding: 5px;
-          }
-
-        }
-        &.text{
-          margin: 10px 0;
-          .inerrItem{
-            border: 1px dotted #727272;
-            padding: 5px;
-          }
-        }
-        &.button{
-          .inerrItem{
-            border: 1px dotted #727272;
-            padding: 5px;
-          }
-          margin: 10px 0;
-        }
-      }
     }
   }
 }

@@ -1,6 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/primeng/resources/primeng.min.css';
 @import '../node_modules/primeicons/primeicons.css';
+body{
+  background-color: #EEF2F5;
+}
 *{
   box-sizing: border-box;
+}
+.icon{
+  &-horizontal{
+    &:before{
+      content: "";
+      height: 10px;
+      width: 18px;
+      background-image: url("./assets/icon/horizontal.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-vertical{
+    &:before{
+      content: "";
+      height: 18px;
+      width: 18px;
+      background-image: url("./assets/icon/vertical.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-spaces{
+    &:before{
+      content: "";
+      height: 10px;
+      width: 18px;
+      background-image: url("./assets/icon/spaces.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-text{
+    &:before{
+      content: "";
+      height: 10px;
+      width: 18px;
+      background-image: url("./assets/icon/text.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-button{
+    &:before{
+      content: "";
+      height: 10px;
+      width: 18px;
+      background-image: url("./assets/icon/button.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
 }
