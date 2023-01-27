@@ -30,6 +30,7 @@ export class FormBuilderComponent implements OnInit{
   ngOnInit(){
 
   }
+
   draggedEvent(event: any){
     this.draggEvent.next(event);
   }

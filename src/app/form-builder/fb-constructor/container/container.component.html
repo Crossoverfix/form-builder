@@ -1,4 +1,8 @@
-<div class="inerrContainer {{ orentation }}">
+<div class="inerrContainer {{ orentation }}"
+     attr.data-template="{{container.template}}"
+     attr.data-name="{{container.name}}"
+     attr.data-icon="{{container.icon}}"
+>
   <div class="inerrContainer__header">
     <div class="inerrContainer__header__icon {{container.icon}}"></div>
     <span>{{ container.name }}</span>
@@ -15,8 +19,8 @@
        cdkDropList
   >
     <ng-container *ngFor="let item of currArr" [ngSwitch]="item.template">
-      <app-container *ngSwitchCase="'vertical'" class="dragged-item vertical" [orentation]="item.template" [container]="item" cdkDrag></app-container>
-      <app-container *ngSwitchCase="'horizontal'" class="dragged-item horizontal" [orentation]="item.template" [container]="item" cdkDrag></app-container>
+      <app-container *ngSwitchCase="'vertical'" class="dragged-container vertical" [orentation]="item.template" [container]="item" cdkDrag></app-container>
+      <app-container *ngSwitchCase="'horizontal'" class="dragged-container horizontal"[orentation]="item.template" [container]="item" cdkDrag></app-container>
       <app-object *ngSwitchCase="'spaces'" class="dragged-item spaces" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'text'" class="dragged-item text" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'button'" class="dragged-item button" [object]="item" cdkDrag></app-object>

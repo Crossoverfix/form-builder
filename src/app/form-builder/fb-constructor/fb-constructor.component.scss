@@ -48,6 +48,9 @@
         justify-content: flex-start;
         margin: 5px;
         padding: 0 25px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
         i{}
         span{
           font-style: normal;
