@@ -1,6 +1,7 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {CdkDragDrop, CdkDropList, moveItemInArray} from "@angular/cdk/drag-drop";
 import {FormBuilderComponent} from "../../form-builder.component";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-container',
@@ -11,6 +12,7 @@ export class ContainerComponent implements OnInit{
 
   @ViewChild('inerrContainer', {static: true}) innerContainer!: CdkDropList;
   @Input() container: any;
+  @Input() content: any = false;
   public currArr: any = [];
   @Input() orentation: any;
   private formBuilderComponent: FormBuilderComponent;
@@ -22,6 +24,12 @@ export class ContainerComponent implements OnInit{
     this.formBuilderComponent.draggEvent.subscribe((obj) => {
       this.listenDraggEvent(obj);
     })
+    if (this.content && this.content != undefined){
+      console.log("да проверки");
+      this.currArr = this.content;
+    } else {
+      this.content = false;
+    }
   }
 
   drop(event: CdkDragDrop<string[]>){

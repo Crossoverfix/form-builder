@@ -28,7 +28,6 @@ export class FbConstructorComponent implements OnInit{
   drop(event: CdkDragDrop<string[]>){
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      console.log(this.baseConstructorArr);
     } else {
       // this.baseConstructorArr.push(event.previousContainer.data[event.previousIndex]);
       // copyArrayItem(
@@ -45,6 +44,7 @@ export class FbConstructorComponent implements OnInit{
   listenDraggEvent(obj: any){
     if(obj.event.target.id == this.container.nativeElement.id){
       this.baseConstructorArr.push(obj.previousContainer.data[obj.previousIndex]);
+      // console.log(this.baseConstructorArr);
     } else {
     }
   }
@@ -88,5 +88,23 @@ export class FbConstructorComponent implements OnInit{
       }
     }
     return result;
+  }
+
+  loadConfig(event: any){
+    let file = new Subject<any>;
+    let reader = new FileReader();
+    reader.readAsText(event.target.files[0]);
+    reader.onload = function () {
+      file.next(JSON.parse(reader.result as string));
+    }
+    file.subscribe((jsonFile) => {
+       this.baseConstructorArr = jsonFile;
+       for (let i = 0; i < this.baseConstructorArr.length; i++){
+         if (this.baseConstructorArr[i].content){
+         } else {
+          this.baseConstructorArr[i].content = false;
+         }
+       }
+    })
   }
 }

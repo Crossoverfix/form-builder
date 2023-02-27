@@ -51,6 +51,9 @@
         cursor: pointer;
         position: relative;
         z-index: 1;
+        input{
+          display: none;
+        }
         i{}
         span{
           font-style: normal;

@@ -19,8 +19,8 @@
        cdkDropList
   >
     <ng-container *ngFor="let item of currArr" [ngSwitch]="item.template">
-      <app-container *ngSwitchCase="'vertical'" class="dragged-container vertical" [orentation]="item.template" [container]="item" cdkDrag></app-container>
-      <app-container *ngSwitchCase="'horizontal'" class="dragged-container horizontal"[orentation]="item.template" [container]="item" cdkDrag></app-container>
+      <app-container *ngSwitchCase="'vertical'" class="dragged-container vertical" [content]="item.content" [orentation]="item.template" [container]="item" cdkDrag></app-container>
+      <app-container *ngSwitchCase="'horizontal'" class="dragged-container horizontal" [content]="item.content" [orentation]="item.template" [container]="item" cdkDrag></app-container>
       <app-object *ngSwitchCase="'spaces'" class="dragged-item spaces" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'text'" class="dragged-item text" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'button'" class="dragged-item button" [object]="item" cdkDrag></app-object>
