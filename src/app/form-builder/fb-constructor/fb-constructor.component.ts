@@ -50,7 +50,7 @@ export class FbConstructorComponent implements OnInit{
   }
   saveForm(){
     this.formArr = this.sortArr(Array.from(this.container.nativeElement.children));
-    let jsonObj = JSON.stringify(this.formArr);
+    let jsonObj = JSON.stringify(this.formArr, null, 1);
     let objFormJson = JSON.parse(jsonObj);
     console.log("Conver to JSON", jsonObj);
     console.log("Convert to object from JSON", objFormJson);

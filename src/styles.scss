@@ -63,4 +63,92 @@ body{
       background-size: contain;
     }
   }
+  &-number{
+    &:before{
+      content: "";
+      height: 12px;
+      width: 18px;
+      background-image: url("./assets/icon/number.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-checkbox{
+    &:before{
+      content: "";
+      height: 14px;
+      width: 18px;
+      background-image: url("./assets/icon/checkbox.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-ratio{
+    &:before{
+      content: "";
+      height: 14px;
+      width: 18px;
+      background-image: url("./assets/icon/ratio.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-select{
+    &:before{
+      content: "";
+      height: 12px;
+      width: 16px;
+      background-image: url("./assets/icon/select.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-save{
+    &:before{
+      content: "";
+      height: 18px;
+      width: 18px;
+      background-image: url("./assets/icon/save.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-cancel{
+    &:before{
+      content: "";
+      height: 16px;
+      width: 16px;
+      background-image: url("./assets/icon/cancel.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-download{
+    &:before{
+      content: "";
+      height: 18px;
+      width: 18px;
+      background-image: url("./assets/icon/download.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-view{
+    &:before{
+      content: "";
+      height: 18px;
+      width: 18px;
+      background-image: url("./assets/icon/watch.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
 }

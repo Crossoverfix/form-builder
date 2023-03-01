@@ -18,7 +18,11 @@ export class FormBuilderComponent implements OnInit{
       ]},
     {group: "Поля", groupItem: [
         {name: "Текст", icon: "icon-text", template: "text", container: false,},
-        {name: "Кнопка", icon: "icon-button", template: "button", container: false,}
+        {name: "Кнопка", icon: "icon-button", template: "button", container: false,},
+        {name: "Номер", icon: "icon-number", template: "button", container: false,},
+        {name: "Чекбокс", icon: "icon-checkbox", template: "button", container: false,},
+        {name: "Радиобокс", icon: "icon-ratio", template: "button", container: false,},
+        {name: "Выбор", icon: "icon-select", template: "button", container: false,},
       ]}
   ];
   public draggEvent = new Subject();

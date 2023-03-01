@@ -54,7 +54,17 @@
         input{
           display: none;
         }
-        i{}
+        i{
+          display: inline-block;
+          width: 25px;
+          height: 18px;
+          margin-right: 10px;
+          position: relative;
+          font-size: 12px;
+          &:before{
+            display: inline-block;
+          }
+        }
         span{
           font-style: normal;
           font-weight: 600;
