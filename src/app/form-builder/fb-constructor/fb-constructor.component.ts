@@ -12,9 +12,10 @@ export class FbConstructorComponent implements OnInit{
 
   @ViewChild('parrent', {static: true}) container!: ElementRef;
   @Input() items: any;
+  @Input() catchId: any;
   public baseConstructorArr: any = [];
   private formBuilderComponent: FormBuilderComponent;
-  public formArr: any;
+  public formArr: any = {};
 
   constructor(formBuilderComponent: FormBuilderComponent,){
     this.formBuilderComponent = formBuilderComponent;
@@ -49,7 +50,10 @@ export class FbConstructorComponent implements OnInit{
     }
   }
   saveForm(){
-    this.formArr = this.sortArr(Array.from(this.container.nativeElement.children));
+    this.formArr.id = 0;
+    this.formArr.id = this.catchId;
+    this.formArr.markUp = this.sortArr(Array.from(this.container.nativeElement.children));
+    console.log('formArr ', this.formArr);
     let jsonObj = JSON.stringify(this.formArr, null, 1);
     let objFormJson = JSON.parse(jsonObj);
     console.log("Conver to JSON", jsonObj);

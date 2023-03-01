@@ -22,6 +22,7 @@ import {group} from "@angular/animations";
 export class FbItemsComponent implements OnInit{
 
   @Output() itemDragged: EventEmitter<any> = new EventEmitter<any>();
+  @Output() dictonaryId: EventEmitter<any> = new EventEmitter<any>();
   @Input() items: any;
   public loadedFileName: string = "";
 
@@ -44,10 +45,19 @@ export class FbItemsComponent implements OnInit{
   }
   updateAfterLoad(file: any){
     let newGroup: any = {};
+    let sampleGroup: any = {group: "Поля", groupItem: [
+        {name: "Текст", icon: "icon-text", template: "text", container: false,},
+        {name: "Кнопка", icon: "icon-button", template: "button", container: false,},
+        {name: "Номер", icon: "icon-number", template: "button", container: false,},
+        {name: "Чекбокс", icon: "icon-checkbox", template: "button", container: false,},
+        {name: "Радиобокс", icon: "icon-ratio", template: "button", container: false,},
+        {name: "Выбор", icon: "icon-select", template: "button", container: false,},
+      ]};
     let gi = 0;
     newGroup.group = file.Title;
     newGroup.guid = file.GUID;
     newGroup.id = file.ID;
+    this.dictonaryId.emit(file.ID);
     newGroup.groupItem = [];
     // newGroup.groupItem = file.Fields;
     for (let i = 0; i < file.Fields.length; i++){
@@ -63,6 +73,7 @@ export class FbItemsComponent implements OnInit{
       }
     }
     this.items.push(newGroup);
+    this.items.push(sampleGroup);
     console.log(this.items);
   }
   iconOfType(type: number){

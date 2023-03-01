@@ -1,6 +1,6 @@
 <div class="fb-frame">
 <!--<div class="fb-frame">-->
-  <app-fb-items [items]="items" (itemDragged)="draggedEvent($event)"></app-fb-items>
-  <app-fb-constructor [items]="items"></app-fb-constructor>
+  <app-fb-items [items]="items" (itemDragged)="draggedEvent($event)" (dictonaryId)="sendId($event)"></app-fb-items>
+  <app-fb-constructor [items]="items" [catchId]="sendedId"></app-fb-constructor>
   <app-fb-settings></app-fb-settings>
 </div>

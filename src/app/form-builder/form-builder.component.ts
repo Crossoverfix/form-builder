@@ -15,16 +15,9 @@ export class FormBuilderComponent implements OnInit{
         {name: "Горизонтальный", icon: "icon-horizontal", template: "horizontal", container: true,},
         {name: "Вертикальный", icon: "icon-vertical", template: "vertical", container: true,},
         {name: "Пробел", icon: "icon-spaces", template: "spaces", container: false,}
-      ]},
-    {group: "Поля", groupItem: [
-        {name: "Текст", icon: "icon-text", template: "text", container: false,},
-        {name: "Кнопка", icon: "icon-button", template: "button", container: false,},
-        {name: "Номер", icon: "icon-number", template: "button", container: false,},
-        {name: "Чекбокс", icon: "icon-checkbox", template: "button", container: false,},
-        {name: "Радиобокс", icon: "icon-ratio", template: "button", container: false,},
-        {name: "Выбор", icon: "icon-select", template: "button", container: false,},
       ]}
   ];
+  public sendedId = 0;
   public draggEvent = new Subject();
 
   constructor(){
@@ -34,7 +27,9 @@ export class FormBuilderComponent implements OnInit{
   ngOnInit(){
 
   }
-
+  sendId(event: any){
+    this.sendedId = event;
+  }
   draggedEvent(event: any){
     this.draggEvent.next(event);
   }
