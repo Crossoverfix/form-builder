@@ -16,6 +16,7 @@ export class FbConstructorComponent implements OnInit{
   public baseConstructorArr: any = [];
   private formBuilderComponent: FormBuilderComponent;
   public formArr: any = {};
+  public dictId: string = '';
 
   constructor(formBuilderComponent: FormBuilderComponent,){
     this.formBuilderComponent = formBuilderComponent;
@@ -102,7 +103,8 @@ export class FbConstructorComponent implements OnInit{
       file.next(JSON.parse(reader.result as string));
     }
     file.subscribe((jsonFile) => {
-       this.baseConstructorArr = jsonFile;
+       this.baseConstructorArr = jsonFile.markUp;
+       this.dictId = jsonFile.id;
        for (let i = 0; i < this.baseConstructorArr.length; i++){
          if (this.baseConstructorArr[i].content){
          } else {

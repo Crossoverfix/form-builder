@@ -44,7 +44,7 @@ body{
   &-text{
     &:before{
       content: "";
-      height: 10px;
+      height: 18px;
       width: 18px;
       background-image: url("./assets/icon/text.svg");
       background-repeat: no-repeat;
@@ -66,7 +66,7 @@ body{
   &-number{
     &:before{
       content: "";
-      height: 12px;
+      height: 18px;
       width: 18px;
       background-image: url("./assets/icon/number.svg");
       background-repeat: no-repeat;
@@ -146,6 +146,226 @@ body{
       height: 18px;
       width: 18px;
       background-image: url("./assets/icon/watch.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-known{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/known.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-unknown{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/unkwnown.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-32b{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/32b.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-64b{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/64b.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-guid{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/guid.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-note{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/note.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-date{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/date.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-lookup{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/lookup.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-m-loookup{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/m-lookup.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-binar{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/binar.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-choice{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/choice.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-link{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/link.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-attach{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/attach.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-m-choice{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/m-choice.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-f-lookup{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/f-lookup.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-decimal{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/decimal.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-image{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/image.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-access{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/access.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-boolean{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/boolean.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-xml{
+    &:before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      background-image: url("./assets/icon/xml.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;

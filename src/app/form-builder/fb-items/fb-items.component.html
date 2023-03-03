@@ -1,10 +1,11 @@
-<div class="fb-item" cdkDropListSortingDisabled>
-  <div class="fb-item__group" *ngFor="let item of items; index as i">
+<div #list class="fb-item" cdkDropListSortingDisabled>
+  <div class="fb-item__group"  *ngFor="let item of items; index as i">
     <div class="fb-item__group__header">
-      <button class="fb-item__group__header__toggle"></button>
+      <button class="fb-item__group__header__toggle" [attr.data-toggle-index]="i" (click)="toggleShowContent(i)"></button>
       <span class="fb-item__group__header__title">{{ item.group}}</span>
     </div>
     <div class="fb-item__group__body"
+         [attr.data-content-index]="i"
          cdkDropList
          cdkDropListSortingDisabled
          [cdkDropListData]="item.groupItem"
@@ -27,6 +28,7 @@
         <span>Загрузить справочник</span>
       </div>
       <span class="fb-item__footer__load__value" *ngIf="loadedFileName">используется {{loadedFileName}}</span>
+      <span class="fb-item__footer__load__value" *ngIf="loadedFileName">ID: {{dictId}}</span>
     </label>
   </div>
 </div>

@@ -21,10 +21,12 @@ import {group} from "@angular/animations";
 })
 export class FbItemsComponent implements OnInit{
 
+  @ViewChild('list', {static: true}) itemList!: ElementRef;
   @Output() itemDragged: EventEmitter<any> = new EventEmitter<any>();
   @Output() dictonaryId: EventEmitter<any> = new EventEmitter<any>();
   @Input() items: any;
   public loadedFileName: string = "";
+  public dictId: string = "неизвестный";
 
   constructor(){
 
@@ -45,21 +47,13 @@ export class FbItemsComponent implements OnInit{
   }
   updateAfterLoad(file: any){
     let newGroup: any = {};
-    let sampleGroup: any = {group: "Поля", groupItem: [
-        {name: "Текст", icon: "icon-text", template: "text", container: false,},
-        {name: "Кнопка", icon: "icon-button", template: "button", container: false,},
-        {name: "Номер", icon: "icon-number", template: "button", container: false,},
-        {name: "Чекбокс", icon: "icon-checkbox", template: "button", container: false,},
-        {name: "Радиобокс", icon: "icon-ratio", template: "button", container: false,},
-        {name: "Выбор", icon: "icon-select", template: "button", container: false,},
-      ]};
     let gi = 0;
     newGroup.group = file.Title;
     newGroup.guid = file.GUID;
     newGroup.id = file.ID;
     this.dictonaryId.emit(file.ID);
+    this.dictId = file.ID;
     newGroup.groupItem = [];
-    // newGroup.groupItem = file.Fields;
     for (let i = 0; i < file.Fields.length; i++){
       if (!file.Fields[i].Hidden){
         newGroup.groupItem[gi] = {};
@@ -68,60 +62,57 @@ export class FbItemsComponent implements OnInit{
         newGroup.groupItem[gi].container = false;
         newGroup.groupItem[gi].icon = this.iconOfType(file.Fields[i].FieldType);
         newGroup.groupItem[gi].template = "costume";
-        console.log(newGroup.groupItem[gi]);
         gi++;
       }
     }
     this.items.push(newGroup);
-    this.items.push(sampleGroup);
-    console.log(this.items);
   }
   iconOfType(type: number){
     let result = "costume";
     switch(type){
-      case 0: result = "costume-1";
+      case 0: result = "icon-known";
         break;
-      case 1: result = "costume-1";
+      case 1: result = "icon-32b";
         break;
-      case 2: result = "costume-3";
+      case 2: result = "icon-64b";
         break;
-      case 3: result = "costume-4";
+      case 3: result = "icon-guid";
         break;
       case 4: result = "icon-text";
         break;
-      case 5: result = "icon-text";
+      case 5: result = "icon-note";
         break;
-      case 6: result = "costume-7";
+      case 6: result = "icon-date";
         break;
-      case 7: result = "icon-select";
+      case 7: result = "icon-lookup";
         break;
-      case 8: result = "icon-select";
+      case 8: result = "icon-m-lookup";
         break;
       case 9: result = "icon-number";
         break;
-      case 10: result = "costume-11";
+      case 10: result = "icon-binar";
         break;
-      case 11: result = "icon-select";
+      case 11: result = "icon-choice";
         break;
-      case 12: result = "costume-13";
+      case 12: result = "icon-link";
         break;
-      case 13: result = "costume-14";
+      case 13: result = "icon-attach";
         break;
-      case 14: result = "icon-select";
+      case 14: result = "icon-m-choice";
         break;
-      case 15: result = "icon-select";
+      case 15: result = "icon-f-lookup";
         break;
-      case 16: result = "costume-17";
+      case 16: result = "icon-decimal";
         break;
-      case 17: result = "costume-18";
+      case 17: result = "icon-image";
         break;
-      case 18: result = "costume-19";
+      case 18: result = "icon-access";
         break;
-      case 19: result = "costume-20";
+      case 19: result = "icon-boolean";
         break;
-      case 20: result = "costume-21";
+      case 20: result = "icon-xml";
         break;
-      default: result = "out-of-range";
+      default: result = "icon-un-known";
     }
     return result;
   }
@@ -130,5 +121,11 @@ export class FbItemsComponent implements OnInit{
     this.itemDragged.emit(event);
     // let item = {item: this.items[i].groupItem[event.currentIndex],target: event.event.target, event: event};
     // this.itemDragged.emit(item);
+  }
+
+  toggleShowContent(index:any){
+    let list = this.itemList.nativeElement;
+    list.querySelectorAll('[data-toggle-index="'+index+'"]' )[0].classList.toggle("hidde");
+    list.querySelectorAll('[data-content-index="'+index+'"]' )[0].classList.toggle("hidde");
   }
 }

@@ -34,6 +34,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      position: relative;
       &__btn{
         background: #FFFFFF;
         border: 2px solid #0049C2;
@@ -72,6 +73,17 @@
           line-height: 16px;
           color: #0049C2;
         }
+      }
+      &__dictonary-id{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        color: #5A758D;
       }
     }
     &__container{

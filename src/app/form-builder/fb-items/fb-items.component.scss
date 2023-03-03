@@ -47,6 +47,9 @@
           &:hover{
             opacity: 0.6;
           }
+          &.hidde{
+            transform: rotate(-90deg);
+          }
         }
         &__title{
           font-style: normal;
@@ -60,6 +63,10 @@
       }
       &__body{
         overflow: hidden;
+        max-height: 2000px;
+        &.hidde{
+          max-height: 0px;
+        }
       }
     }
     &__draggable{
