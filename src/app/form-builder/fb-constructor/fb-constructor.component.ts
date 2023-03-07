@@ -26,7 +26,26 @@ export class FbConstructorComponent implements OnInit{
       this.listenDraggEvent(obj);
     })
   }
+  selectItem(event: any){
+    let selected = document.getElementsByClassName('select');
+    for (let i = 0; i < selected.length;i++){
+      selected[i].classList.remove('select');
+    }
+    console.log(selected);
+    console.log(event);
+    console.log(event.target);
+    console.log(event.target.closest(".cdk-drag"));
+    if (event.target.classList.contains('cdk-drag')){
+      event.target.classList.add('select');
+    } else {
+      event.target.closest(".cdk-drag").classList.add('select');
+    }
+  }
+  findParrentClass(target: any, targetClass: string){
+    if (target.offsetParent.classList.contains(targetClass)){
 
+    }
+  }
   drop(event: CdkDragDrop<string[]>){
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -46,7 +65,6 @@ export class FbConstructorComponent implements OnInit{
   listenDraggEvent(obj: any){
     if(obj.event.target.id == this.container.nativeElement.id){
       this.baseConstructorArr.push(obj.previousContainer.data[obj.previousIndex]);
-      console.log(this.baseConstructorArr);
     } else {
     }
   }
@@ -94,7 +112,6 @@ export class FbConstructorComponent implements OnInit{
     }
     return result;
   }
-
   loadConfig(event: any){
     let file = new Subject<any>;
     let reader = new FileReader();
