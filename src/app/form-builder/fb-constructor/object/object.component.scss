@@ -4,7 +4,8 @@
   margin: 10px 0;
   &.select{
     & > .inerrItem{
-      border: 1px solid #27AE60;
+      //border: 1px solid #27AE60;
+      outline: 2px solid #27AE60;
     }
   }
 }
@@ -25,7 +26,8 @@
   justify-content: flex-start;
   flex-wrap: nowrap;
   &.spaces{
-    background: #C7CED5;
+    background: #F6F8FA;
+    border: 1px solid #F6F8FA;
     .inerrItem__icon{
       position: absolute;
       display: block;
