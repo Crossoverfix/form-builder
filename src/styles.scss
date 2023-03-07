@@ -3,6 +3,11 @@
 @import '../node_modules/primeicons/primeicons.css';
 body{
   background-color: #EEF2F5;
+  margin: 0;
+  height: 100vh;
+  app-root{
+    height: 100%;
+  }
 }
 *{
   box-sizing: border-box;

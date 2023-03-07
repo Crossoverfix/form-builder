@@ -31,19 +31,10 @@ export class FbConstructorComponent implements OnInit{
     for (let i = 0; i < selected.length;i++){
       selected[i].classList.remove('select');
     }
-    console.log(selected);
-    console.log(event);
-    console.log(event.target);
-    console.log(event.target.closest(".cdk-drag"));
     if (event.target.classList.contains('cdk-drag')){
       event.target.classList.add('select');
     } else {
       event.target.closest(".cdk-drag").classList.add('select');
-    }
-  }
-  findParrentClass(target: any, targetClass: string){
-    if (target.offsetParent.classList.contains(targetClass)){
-
     }
   }
   drop(event: CdkDragDrop<string[]>){
