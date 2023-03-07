@@ -1,0 +1,109 @@
+:host{
+  width: 100%;
+  z-index: 0;
+  margin: 10px 0;
+}
+.inerrItem{
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border: 1px solid #C7CED5;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  &.spaces{
+    background: #C7CED5;
+    .inerrItem__icon{
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:before{
+        display: block;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &__option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+    margin-left: auto;
+    z-index: 1;
+    margin-right: 10px;
+    flex-shrink: 0;
+    &__btn{
+      width: 25px;
+      height: 25px;
+      margin-left: 5px;
+      background-color: #FFFFFF;
+      border: 1px solid #9AA6BB;
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+      &:hover{
+        border: 1px solid #0049C2;
+      }
+      &.btn{
+        &-setting{
+          background-image: url("../../../../assets/icon/setting.svg");
+          background-repeat: no-repeat;
+          background-size: 17px auto;
+          background-position: center;
+
+        }
+        &-remove{
+          background-image: url("../../../../assets/icon/remove.svg");
+          background-repeat: no-repeat;
+          background-size: 13px auto;
+          background-position: center;
+        }
+      }
+    }
+  }
+  .item-icon{
+    height: 100%;
+    width: 50px;
+    margin-right: 20px;
+    border-right: 2px solid #C7CED5;
+    background-color: #ffffff;
+    position: relative;
+    flex-shrink: 0;
+    &:before{
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .item-name{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #5A758D;
+    padding: 5px;
+  }
+}

@@ -1,7 +1,27 @@
-<div class="inerrItem"
-     attr.data-template="{{object.template}}"
-     attr.data-name="{{object.name}}"
-     attr.data-icon="{{object.icon}}"
->
-  {{ object.name}}
-</div>
+<ng-container [ngSwitch]="object.template">
+  <div class="inerrItem spaces"
+       *ngSwitchCase="'spaces'"
+       attr.data-template="{{object.template}}"
+       attr.data-name="{{object.name}}"
+       attr.data-icon="{{object.icon}}"
+  >
+    <div class="inerrItem__icon {{object.icon}}"></div>
+    <div class="inerrItem__option">
+      <button class="inerrItem__option__btn btn-setting"></button>
+      <button class="inerrItem__option__btn btn-remove"></button>
+    </div>
+  </div>
+  <div class="inerrItem costume"
+       *ngSwitchCase="'costume'"
+       attr.data-template="{{object.template}}"
+       attr.data-name="{{object.name}}"
+       attr.data-icon="{{object.icon}}"
+  >
+    <div class="item-icon {{object.icon}}"></div>
+    <div class="item-name">{{object.name}}</div>
+    <div class="inerrItem__option">
+      <button class="inerrItem__option__btn btn-setting"></button>
+      <button class="inerrItem__option__btn btn-remove"></button>
+    </div>
+  </div>
+</ng-container>
