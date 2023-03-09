@@ -1,7 +1,8 @@
-<div class="fb-constructor" cdkDropListGroup (click)="selectItem($event)">
+<div class="fb-constructor" cdkDropListGroup>
   <h2 class="fb-constructor__title">Конструктор форм</h2>
 <!--<div class="fb-constructor">-->
   <div #parrent id="parrent" class="fb-constructor__container"
+       (click)="selectItem($event)"
        (cdkDropListDropped)="drop($event)"
        [cdkDropListData]="baseConstructorArr"
        [cdkDropListEnterPredicate]="blockSdkDragg"
