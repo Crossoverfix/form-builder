@@ -25,7 +25,6 @@ export class ContainerComponent implements OnInit{
       this.listenDraggEvent(obj);
     })
     if (this.content && this.content != undefined){
-      console.log("да проверки");
       this.currArr = this.content;
     } else {
       this.content = false;

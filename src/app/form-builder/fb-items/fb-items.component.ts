@@ -24,6 +24,7 @@ export class FbItemsComponent implements OnInit{
   @ViewChild('list', {static: true}) itemList!: ElementRef;
   @Output() itemDragged: EventEmitter<any> = new EventEmitter<any>();
   @Output() dictonaryId: EventEmitter<any> = new EventEmitter<any>();
+  @Output() listOfItems: EventEmitter<any> = new EventEmitter<any>();
   @Input() items: any;
   public loadedFileName: string = "";
   public dictId: string = "неизвестный";
@@ -66,6 +67,7 @@ export class FbItemsComponent implements OnInit{
       }
     }
     this.items.push(newGroup);
+    this.listOfItems.emit(this.items);
   }
   iconOfType(type: number){
     let result = "costume";

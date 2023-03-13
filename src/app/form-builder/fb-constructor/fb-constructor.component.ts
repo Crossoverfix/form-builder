@@ -17,6 +17,7 @@ export class FbConstructorComponent implements OnInit{
   private formBuilderComponent: FormBuilderComponent;
   public formArr: any = {};
   public dictId: string = '';
+  public listId:any = [];
 
   constructor(formBuilderComponent: FormBuilderComponent,){
     this.formBuilderComponent = formBuilderComponent;
@@ -63,11 +64,8 @@ export class FbConstructorComponent implements OnInit{
     this.formArr.id = 0;
     this.formArr.id = this.catchId;
     this.formArr.markUp = this.sortArr(Array.from(this.container.nativeElement.children));
-    console.log('formArr ', this.formArr);
     let jsonObj = JSON.stringify(this.formArr, null, 1);
     let objFormJson = JSON.parse(jsonObj);
-    console.log("Conver to JSON", jsonObj);
-    console.log("Convert to object from JSON", objFormJson);
     let fileJson = new Blob([jsonObj], {type : 'application/json'});
     var url = window.URL.createObjectURL(fileJson);
     var link = document.createElement('a');
@@ -80,8 +78,8 @@ export class FbConstructorComponent implements OnInit{
       document.body.removeChild(link);
     }, 1000);
   }
-  sortArr(colection: any){
-    let arr: any = Array.from(colection);
+  sortArr(collection: any){
+    let arr: any = Array.from(collection);
     let result: any = [];
     for(let i = 0; i < arr.length; i++){
       for (let ii = 0; ii < arr[i].children.length; ii++){
@@ -90,14 +88,14 @@ export class FbConstructorComponent implements OnInit{
             if (arr[i].children[ii].children[iii].classList.contains('cdk-drop-list')){
               // this.sortArr(arr[i].children[ii].children[iii].children);
               if(arr[i].children[ii].children[iii].children.length){
-                result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container', "content": this.sortArr(arr[i].children[ii].children[iii].children)})
+                result.push({"container": true, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container',"ID":arr[i].children[ii].dataset.id, "content": this.sortArr(arr[i].children[ii].children[iii].children)})
               } else {
-                result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container'})
+                result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container',"ID":arr[i].children[ii].dataset.id})
               }
             }
           }
         } else if (arr[i].children[ii].classList.contains('inerrItem')) {
-          result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'item' });
+          result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'item',"ID":arr[i].children[ii].dataset.id });
         }
       }
     }
@@ -119,6 +117,47 @@ export class FbConstructorComponent implements OnInit{
           this.baseConstructorArr[i].content = false;
          }
        }
+       this.checkDifferences();
     })
+  }
+  checkDifferences(){
+    let collection = this.formBuilderComponent.listOfItems;
+    this.listId = [];
+    for (let i = 0; i < collection.length;i++ ){
+      for (let ii = 0; ii < collection[i].groupItem.length;ii++){
+        if (collection[i].groupItem[ii].ID){
+          this.listId.push(collection[i].groupItem[ii].ID);
+        } else {
+        }
+      }
+    }
+    setTimeout(() => {
+      this.markAllDifferent(this.listId);
+    }, 500)
+
+  }
+  markAllDifferent(collection: any){
+    let ar = document.querySelectorAll(".inerrItem");
+    let arr: any = Array.from(ar);
+    console.log(arr);
+    console.log(collection);
+    for(let i = 0; i < arr.length; i++){
+      if (arr[i].dataset.id){
+        for (let ci = 0; ci < collection.length; ci++){
+          console.log("if-1: ", arr[i].dataset.id);
+          console.log("if-2: ", collection[ci]);
+          arr[i].classList.add('mismatch');
+          if (arr[i].dataset.id == collection[ci]){
+            console.log("yes for arr: ", i, "collection: ", ci , collection[ci]);
+            arr[i].classList.remove('mismatch');
+            break;
+          }
+        }
+      }
+      console.log(arr[i].dataset.id);
+    }
+  }
+  checkArrayId(idList: any,checkedArray: any){
+
   }
 }

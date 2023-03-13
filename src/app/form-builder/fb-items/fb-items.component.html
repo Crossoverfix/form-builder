@@ -23,12 +23,14 @@
   <div class="fb-item__footer">
     <label class="fb-item__footer__load">
       <input type="file" accept=".json" (change)="loadConfig($event)">
-      <div class="fb-item__footer__load__btn" *ngIf="!loadedFileName">
+      <div class="fb-item__footer__load__btn" >
         <i class="icon-download"></i>
         <span>Загрузить справочник</span>
       </div>
-      <span class="fb-item__footer__load__value" *ngIf="loadedFileName">Файл: {{loadedFileName}}</span>
-      <span class="fb-item__footer__load__value" *ngIf="loadedFileName">ID: {{dictId}}</span>
     </label>
+    <div class="fb-item__footer__load" *ngIf="loadedFileName">
+      <span class="fb-item__footer__load__value">Файл: {{loadedFileName}}</span>
+      <span class="fb-item__footer__load__value">ID: {{dictId}}</span>
+    </div>
   </div>
 </div>

@@ -14,6 +14,5 @@ export class ObjectComponent implements OnInit{
   }
 
   ngOnInit(){
-
   }
 }

@@ -25,6 +25,9 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  &.mismatch{
+    border: 1px solid red;
+  }
   &.spaces{
     background: #F6F8FA;
     border: 1px solid #F6F8FA;
