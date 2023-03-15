@@ -30,10 +30,11 @@
        attr.data-template="{{object.template}}"
        attr.data-name="{{object.name}}"
        attr.data-icon="{{object.icon}}"
+       attr.data-value="{{input.value}}"
   >
     <div class="item-icon {{object.icon}}"></div>
     <div class="item-value">
-      <input #input type="text" placeholder="Заголовок">
+      <input #input type="text" placeholder="Заголовок" value="{{object.value}}">
     </div>
     <div class="inerrItem__option">
       <button class="inerrItem__option__btn btn-setting"></button>
@@ -45,13 +46,14 @@
        attr.data-template="{{object.template}}"
        attr.data-name="{{object.name}}"
        attr.data-icon="{{object.icon}}"
+       attr.data-value="{{input.value}}"
   >
     <div class="item-icon {{object.icon}}"></div>
     <div class="item-value">
-      <input #input type="text" placeholder="Под-Заголовок">
+      <input #input type="text" placeholder="Под-Заголовок" value="{{object.value}}">
     </div>
     <div class="inerrItem__option">
-      <button class="inerrItem__option__btn btn-setting" (click)="checkInput()"></button>
+      <button class="inerrItem__option__btn btn-setting"></button>
       <button class="inerrItem__option__btn btn-remove" (click)="deleteObject()"></button>
     </div>
   </div>

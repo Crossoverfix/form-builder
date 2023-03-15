@@ -19,22 +19,18 @@
   </div>
   <div class="fb-constructor__footer">
     <span class="fb-constructor__footer__dictonary-id">ID: {{dictId}}</span>
-    <button class="fb-constructor__footer__btn" (click)="saveForm()">
-      <i class="icon-save"></i>
-      <span>Сохранить</span>
-    </button>
-    <button class="fb-constructor__footer__btn">
-      <i class="icon-cancel"></i>
-      <span>Отменить</span>
-    </button>
     <label class="fb-constructor__footer__btn">
       <input type="file" accept=".json" (change)="loadConfig($event)">
       <i class="icon-download"></i>
       <span>Загрузить</span>
     </label>
-    <button class="fb-constructor__footer__btn">
-      <i class="icon-view"></i>
-      <span>Посмотреть</span>
+    <button class="fb-constructor__footer__btn" (click)="saveForm()">
+      <i class="icon-save"></i>
+      <span>Сохранить</span>
+    </button>
+    <button class="fb-constructor__footer__btn" (click)="clearConstructor()">
+      <i class="icon-cancel"></i>
+      <span>Отменить</span>
     </button>
   </div>
 </div>

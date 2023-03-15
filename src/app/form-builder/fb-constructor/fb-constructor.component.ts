@@ -98,7 +98,7 @@ export class FbConstructorComponent implements OnInit{
             }
           }
         } else if (arr[i].children[ii].classList.contains('inerrItem')) {
-          result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'item',"ID":arr[i].children[ii].dataset.id });
+          result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'item',"ID":arr[i].children[ii].dataset.id, "value": arr[i].children[ii].dataset.value });
         }
       }
     }
@@ -153,5 +153,8 @@ export class FbConstructorComponent implements OnInit{
         }
       }
     }
+  }
+  clearConstructor(){
+    this.baseConstructorArr = [];
   }
 }

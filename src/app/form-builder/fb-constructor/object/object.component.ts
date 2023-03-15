@@ -16,11 +16,6 @@ export class ObjectComponent implements OnInit{
 
   ngOnInit(){
   }
-  checkInput(){
-    console.log(this.input);
-    console.log(this.input.nativeElement);
-    console.log(this.input.nativeElement.value);
-  }
   deleteObject(){
     this.host.nativeElement.parentNode.parentNode.removeChild(this.host.nativeElement.parentNode);
   }

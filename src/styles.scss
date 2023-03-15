@@ -57,6 +57,28 @@ body{
       background-size: contain;
     }
   }
+  &-title{
+    &:before{
+      content: "";
+      height: 18px;
+      width: 18px;
+      background-image: url("./assets/icon/h2.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &-sub-title{
+    &:before{
+      content: "";
+      height: 18px;
+      width: 18px;
+      background-image: url("./assets/icon/h3.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
   &-button{
     &:before{
       content: "";
