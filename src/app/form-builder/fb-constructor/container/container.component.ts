@@ -11,6 +11,7 @@ import {Subject} from "rxjs";
 export class ContainerComponent implements OnInit{
 
   @ViewChild('inerrContainer', {static: true}) innerContainer!: CdkDropList;
+  @ViewChild('parrentContainer') host!: any;
   @Input() container: any;
   @Input() content: any = false;
   public currArr: any = [];
@@ -41,5 +42,8 @@ export class ContainerComponent implements OnInit{
       this.currArr.push(obj.previousContainer.data[obj.previousIndex]);
     } else {
     }
+  }
+  deleteContainer(){
+    this.host.nativeElement.parentNode.parentNode.removeChild(this.host.nativeElement.parentNode);
   }
 }

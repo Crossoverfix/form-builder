@@ -1,4 +1,4 @@
-<div class="inerrContainer {{ orentation }}"
+<div #parrentContainer class="inerrContainer {{ orentation }}"
      attr.data-template="{{container.template}}"
      attr.data-name="{{container.name}}"
      attr.data-icon="{{container.icon}}"
@@ -8,7 +8,7 @@
     <span>{{ container.name }}</span>
     <div class="inerrContainer__header__option">
       <button class="inerrContainer__header__option__btn btn-setting"></button>
-      <button class="inerrContainer__header__option__btn btn-remove"></button>
+      <button class="inerrContainer__header__option__btn btn-remove" (click)="deleteContainer()"></button>
     </div>
   </div>
   <div class="inerrContainer__body"

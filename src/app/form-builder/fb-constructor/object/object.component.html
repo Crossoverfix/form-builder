@@ -1,4 +1,4 @@
-<ng-container [ngSwitch]="object.template">
+<ng-container [ngSwitch]="object.template" #parrentContainer>
   <div class="inerrItem spaces"
        *ngSwitchCase="'spaces'"
        attr.data-template="{{object.template}}"
@@ -8,7 +8,7 @@
     <div class="inerrItem__icon {{object.icon}}"></div>
     <div class="inerrItem__option">
       <button class="inerrItem__option__btn btn-setting"></button>
-      <button class="inerrItem__option__btn btn-remove"></button>
+      <button class="inerrItem__option__btn btn-remove" (click)="deleteObject()"></button>
     </div>
   </div>
   <div class="inerrItem costume"
@@ -22,7 +22,7 @@
     <div class="item-name">{{object.name}}</div>
     <div class="inerrItem__option">
       <button class="inerrItem__option__btn btn-setting"></button>
-      <button class="inerrItem__option__btn btn-remove"></button>
+      <button class="inerrItem__option__btn btn-remove" (click)="deleteObject()"></button>
     </div>
   </div>
 </ng-container>

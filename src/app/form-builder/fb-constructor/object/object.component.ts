@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-object',
@@ -8,11 +8,14 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ObjectComponent implements OnInit{
 
   @Input() object: any;
-
+  @ViewChild('parrentContainer') host!: any;
   constructor(){
 
   }
 
   ngOnInit(){
+  }
+  deleteObject(){
+    this.host.nativeElement.parentNode.parentNode.removeChild(this.host.nativeElement.parentNode);
   }
 }
