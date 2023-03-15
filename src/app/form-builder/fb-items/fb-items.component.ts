@@ -26,6 +26,7 @@ export class FbItemsComponent implements OnInit{
   @Output() dictonaryId: EventEmitter<any> = new EventEmitter<any>();
   @Output() listOfItems: EventEmitter<any> = new EventEmitter<any>();
   @Input() items: any;
+  public defItems: any = {};
   public loadedFileName: string = "";
   public dictId: string = "неизвестный";
 
@@ -33,6 +34,7 @@ export class FbItemsComponent implements OnInit{
 
   }
   ngOnInit(){
+    this.defItems = this.items[0];
   }
   loadConfig(event: any){
     let file = new Subject<any>;
@@ -66,6 +68,8 @@ export class FbItemsComponent implements OnInit{
         gi++;
       }
     }
+    this.items = [];
+    this.items.push(this.defItems);
     this.items.push(newGroup);
     this.listOfItems.emit(this.items);
   }
