@@ -26,6 +26,9 @@ export class FbConstructorComponent implements OnInit{
     this.formBuilderComponent.draggEvent.subscribe((obj) => {
       this.listenDraggEvent(obj);
     })
+    this.formBuilderComponent.checkIdEvent.subscribe(() => {
+      this.checkDifferences();
+    })
   }
   selectItem(event: any){
     let selected = document.getElementsByClassName('select');
@@ -112,11 +115,11 @@ export class FbConstructorComponent implements OnInit{
        this.baseConstructorArr = jsonFile.markUp;
        this.dictId = jsonFile.id;
        for (let i = 0; i < this.baseConstructorArr.length; i++){
-         if (this.baseConstructorArr[i].content){
-         } else {
+        if (this.baseConstructorArr[i].content){
+        } else {
           this.baseConstructorArr[i].content = false;
-         }
-       }
+        }
+      }
        this.checkDifferences();
     })
   }
@@ -139,25 +142,16 @@ export class FbConstructorComponent implements OnInit{
   markAllDifferent(collection: any){
     let ar = document.querySelectorAll(".inerrItem");
     let arr: any = Array.from(ar);
-    console.log(arr);
-    console.log(collection);
     for(let i = 0; i < arr.length; i++){
       if (arr[i].dataset.id){
         for (let ci = 0; ci < collection.length; ci++){
-          console.log("if-1: ", arr[i].dataset.id);
-          console.log("if-2: ", collection[ci]);
           arr[i].classList.add('mismatch');
           if (arr[i].dataset.id == collection[ci]){
-            console.log("yes for arr: ", i, "collection: ", ci , collection[ci]);
             arr[i].classList.remove('mismatch');
             break;
           }
         }
       }
-      console.log(arr[i].dataset.id);
     }
-  }
-  checkArrayId(idList: any,checkedArray: any){
-
   }
 }

@@ -20,6 +20,7 @@ export class FormBuilderComponent implements OnInit{
   public sendedId = 0;
   public listOfItems: any;
   public draggEvent = new Subject();
+  public checkIdEvent = new Subject();
 
   constructor(){
 
@@ -36,6 +37,9 @@ export class FormBuilderComponent implements OnInit{
   }
   draggedEvent(event: any){
     this.draggEvent.next(event);
+  }
+  initCheckId(){
+    this.checkIdEvent.next(true);
   }
 
 }

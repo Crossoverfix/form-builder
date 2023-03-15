@@ -25,6 +25,7 @@ export class FbItemsComponent implements OnInit{
   @Output() itemDragged: EventEmitter<any> = new EventEmitter<any>();
   @Output() dictonaryId: EventEmitter<any> = new EventEmitter<any>();
   @Output() listOfItems: EventEmitter<any> = new EventEmitter<any>();
+  @Output() checkId: EventEmitter<any> = new EventEmitter<any>();
   @Input() items: any;
   public defItems: any = {};
   public loadedFileName: string = "";
@@ -35,6 +36,7 @@ export class FbItemsComponent implements OnInit{
   }
   ngOnInit(){
     this.defItems = this.items[0];
+    this.listOfItems.emit(this.items);
   }
   loadConfig(event: any){
     let file = new Subject<any>;
@@ -72,6 +74,7 @@ export class FbItemsComponent implements OnInit{
     this.items.push(this.defItems);
     this.items.push(newGroup);
     this.listOfItems.emit(this.items);
+    this.checkId.emit(true);
   }
   iconOfType(type: number){
     let result = "costume";
