@@ -14,8 +14,8 @@ export class FormBuilderComponent implements OnInit{
     {group: "Контейнеры", groupItem: [
         {name: "Горизонтальный", icon: "icon-horizontal", template: "horizontal", container: true,},
         {name: "Вертикальный", icon: "icon-vertical", template: "vertical", container: true,},
-        {name: "Заголовок", icon: "icon-text", template: "title", container: false,},
-        {name: "Под-Заголовок", icon: "icon-text", template: "sub-title", container: false,},
+        {name: "Заголовок", icon: "icon-title", template: "title", container: false,},
+        {name: "Под-Заголовок", icon: "icon-sub-title", template: "sub-title", container: false,},
         {name: "Пробел", icon: "icon-spaces", template: "spaces", container: false,}
       ]}
   ];
