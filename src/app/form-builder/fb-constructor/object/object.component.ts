@@ -9,11 +9,17 @@ export class ObjectComponent implements OnInit{
 
   @Input() object: any;
   @ViewChild('parrentContainer') host!: any;
+  @ViewChild('input') input!: any;
   constructor(){
 
   }
 
   ngOnInit(){
+  }
+  checkInput(){
+    console.log(this.input);
+    console.log(this.input.nativeElement);
+    console.log(this.input.nativeElement.value);
   }
   deleteObject(){
     this.host.nativeElement.parentNode.parentNode.removeChild(this.host.nativeElement.parentNode);

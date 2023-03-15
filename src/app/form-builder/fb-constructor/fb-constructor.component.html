@@ -13,6 +13,8 @@
       <app-container *ngSwitchCase="'horizontal'" class="dragged-container horizontal" [content]="item.content"  [orentation]="item.template" [container]="item" cdkDrag></app-container>
       <app-object *ngSwitchCase="'spaces'" class="dragged-item spaces" [object]="item" cdkDrag></app-object>
       <app-object *ngSwitchCase="'costume'" class="dragged-item costume" [object]="item" cdkDrag></app-object>
+      <app-object *ngSwitchCase="'title'" class="dragged-item title" [object]="item" cdkDrag></app-object>
+      <app-object *ngSwitchCase="'sub-title'" class="dragged-item sub-title" [object]="item" cdkDrag></app-object>
     </ng-container>
   </div>
   <div class="fb-constructor__footer">

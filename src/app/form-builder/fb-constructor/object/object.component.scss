@@ -116,4 +116,25 @@
     color: #5A758D;
     padding: 5px;
   }
+  .item-value{
+    width: 100%;
+    height: 100%;
+    input{
+      width: 100%;
+      height: 100%;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      color: #5A758D;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      &:focus,&:hover{
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
 }
