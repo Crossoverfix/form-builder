@@ -10,6 +10,7 @@ export class ObjectComponent implements OnInit{
   @Input() object: any;
   @ViewChild('parrentContainer') host!: any;
   @ViewChild('input') input!: any;
+
   constructor(){
 
   }

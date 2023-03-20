@@ -93,12 +93,12 @@ export class FbConstructorComponent implements OnInit{
               if(arr[i].children[ii].children[iii].children.length){
                 result.push({"container": true, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container',"ID":arr[i].children[ii].dataset.id, "content": this.sortArr(arr[i].children[ii].children[iii].children)})
               } else {
-                result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container',"ID":arr[i].children[ii].dataset.id})
+                result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'container',"ID":arr[i].children[ii].dataset.id,"InternalName": arr[i].children[ii].dataset.internal, "Required": arr[i].children[ii].dataset.required})
               }
             }
           }
         } else if (arr[i].children[ii].classList.contains('inerrItem')) {
-          result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'item',"ID":arr[i].children[ii].dataset.id, "value": arr[i].children[ii].dataset.value });
+          result.push({"container": false, "icon": arr[i].children[ii].dataset.icon, "name":arr[i].children[ii].dataset.name, "template":arr[i].children[ii].dataset.template, "type":'item',"ID":arr[i].children[ii].dataset.id, "value": arr[i].children[ii].dataset.value, "InternalName": arr[i].children[ii].dataset.internal, "Required": arr[i].children[ii].dataset.required});
         }
       }
     }
